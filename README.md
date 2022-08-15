@@ -1,8 +1,8 @@
 ## activate-button-by-status install
 
 ### background
-There are times when a button needs to be enabled and disabled in a specific state.
-For example, a button should be disabled when it is in a non-cancelable state.
+There are times when a button needs to be enabled and disabled in a specific status.
+For example, a button should be disabled when it is in a non-cancelable status.
 I ended up using nested if statements while actually writing the code.
 The length of the code became longer and the code became difficult to understand.
 To fix this, the repeated code was made into a component.
