@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const ActiveButtonByStatus = ({
+const ActivateButtonByStatus = ({
   title,
   style,
   onClick,
@@ -24,4 +24,4 @@ const ActiveButtonByStatus = ({
   }, title);
 };
 
-export default ActiveButtonByStatus;
+export default ActivateButtonByStatus;
