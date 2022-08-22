@@ -2,7 +2,9 @@
 
 ### Installation
 
-`npm i @gwiyeomgo/activate-button-by-status`
+`npm install @gwiyeomgo/activate-button-by-status@latest`
+
+`yarn add @gwiyeomgo/activate-button-by-status@latest`
 
 ### background
 
@@ -21,7 +23,7 @@ To fix this, the repeated code was made into a component.
 * 0.1.0 (2022-08-22)
    - add activeStatusWithPermissions and currentPermissions 
 
-### [Example Link](https://github.com/gwiyeomgo/activate-button-by-status/examples)
+### [Example Link](https://github.com/gwiyeomgo/activate-button-by-status/tree/main/examples)
 
 #### version 0.0.0
 * If not included in the activeStatus, the button is disabled.

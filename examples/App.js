@@ -12,23 +12,24 @@ const STATUS = {
 export default function App() {
     return (
         <div className="App">
+            {/* currentStatus is disabled because it is not included in activeStatus */ }
             <ActivateButtonByStatus
-                title={"Cancelled"}
+                title={"Cancelled Button(disabled)"}
                 onClick={() => {
-                    console.log("You can implement the situation by clicking the button");
+                    alert("You can implement the situation by clicking the button");
                 }}
-                style={{ backgroundColor: "white" }}
+                style={{backgroundColor: "pink"}}
                 currentStatus={STATUS.Completed}
                 activeStatus={["Registered", "Accepted"]}
             />
+            {/*Users with manager Permission can cancel in the Completed status.*/}
             <ActivateButtonByStatus
-                title={"Cancelled"}
+                title={"Cancelled Button"}
                 onClick={() => {
-                    console.log("You can implement the situation by clicking the button");
+                    alert("You can implement the situation by clicking the button");
                 }}
-                style={{ backgroundColor: "white" }}
+                style={{backgroundColor: "white"}}
                 currentStatus={STATUS.Completed}
-                // activeStatus={["Registered", "Accepted"]}
                 currentPermissions={["Manager"]}
                 activeStatusWithPermissions={{
                     Completed: ["Manager"],
