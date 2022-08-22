@@ -5,17 +5,35 @@ const ActivateButtonByStatus = ({
   style,
   onClick,
   activeStatus,
-  currentStatus
+  currentStatus,
+  currentPermissions,
+  activeStatusWithPermissions
 }) => {
   const [disabled, setDisabled] = useState(true);
 
   const ButtonDisabled = ok => setDisabled(!ok);
 
   useEffect(() => {
-    if (activeStatus && currentStatus) {
-      ButtonDisabled(activeStatus.includes(currentStatus));
+    let hasPermission = false;
+
+    if (activeStatus && activeStatus.length > 0 && currentStatus) {
+      hasPermission = activeStatus.includes(currentStatus);
     }
-  }, [activeStatus, currentStatus]);
+
+    if (activeStatusWithPermissions) {
+      if (activeStatusWithPermissions.hasOwnProperty(currentStatus)) {
+        if (activeStatusWithPermissions[currentStatus].length > 0) {
+          hasPermission = currentPermissions.some(item => item && item !== "" ? activeStatusWithPermissions[currentStatus].includes(item) : false);
+        } else {
+          hasPermission = false;
+        }
+      } else {
+        hasPermission = true;
+      }
+    }
+
+    ButtonDisabled(hasPermission);
+  }, [activeStatus, currentStatus, currentPermissions, activeStatusWithPermissions]);
   return /*#__PURE__*/React.createElement("button", {
     type: "button",
     style: style,
