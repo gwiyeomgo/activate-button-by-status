@@ -1,5 +1,5 @@
 {
-  "include": ["src"],
+  "include": ["./src/**/*"],
   "compilerOptions": {
     "target": "es6",
     "declaration": true,
@@ -8,6 +8,7 @@
     "strict": true ,
     "allowJs": true,
     //타입스크립트 안에 자바스크립트 허용
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react"
   }
 }

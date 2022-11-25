@@ -1,8 +1,8 @@
 {
-  "name": "@gwiyeomgo/activate-button-by-status",
-  "version": "0.1.2",
-  "module": "dist/ActivateButtonByStatus.js",
-  "main": "dist/ActivateButtonByStatus.js",
+  "name": "@gwiyeomgo/activate-button",
+  "version": "0.2.2",
+  "module": "dist/ActivateButton.tsx",
+  "main": "dist/ActivateButton.tsx",
   "description": "react button component that are enabled and disabled depending on their status",
   "keywords": [
     "react",
@@ -53,13 +53,13 @@
       "last 1 safari version"
     ]
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "babel": {
     "presets": [
       "@babel/preset-react"
     ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
