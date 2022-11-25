@@ -15,6 +15,7 @@ export default function App() {
             {/* currentStatus is disabled because it is not included in activeStatus */ }
             <ActivateButtonByStatus
                 title={"Cancelled Button(disabled)"}
+                type={"status"}
                 onClick={() => {
                     alert("You can implement the situation by clicking the button");
                 }}
@@ -25,6 +26,7 @@ export default function App() {
             {/*Users with manager Permission can cancel in the Completed status.*/}
             <ActivateButtonByStatus
                 title={"Cancelled Button"}
+                type={"statusWithPermission"}
                 onClick={() => {
                     alert("You can implement the situation by clicking the button");
                 }}
