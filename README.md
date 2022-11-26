@@ -79,3 +79,19 @@ export default function App() {
         }}
       />
 ```
+#### version 0.2.0
+* add typescript 
+```
+    <ActivateButtonByStatus
+                title={"Cancelled Button(disabled)"} //required
+                type={"status"} //required
+                currentStatus={STATUS.Completed} //required
+      ...
+```
+*  Add required type 
+  * title : string
+  * currentStatus  : string  
+  * type  : string
+      * status  :`If you specify type as 'status', please specify 'currentStatus' and 'activeStatus' together`     
+      * statusWithPermission  :`If you specify type as 'statusWithPermission',
+        please specify 'currentStatus' ,'currentPermissions' and 'activeStatusWithPermissions' together`
