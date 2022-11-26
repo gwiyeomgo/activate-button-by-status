@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from "react";
+import "./styles.css";
 
 // type
 //1 .currentStatus with activeStatus  => 'status'
 //2. currentStatus + currentPermissions + activeStatusWithPermissions => 'statusWithPermission'
 type ButtonType = "status" | "statusWithPermission";
+type Color = "danger" | "primary" | "success";
 type ActiveStatusWithPermissions = {
     [key: string]: string[];
 };
@@ -16,6 +18,8 @@ type ActivateButtonProps = {
     currentStatus: string; //필수
     currentPermissions?: string[];
     activeStatusWithPermissions?: ActiveStatusWithPermissions;
+    disabled?: boolean;
+    color?: Color
 };
 
 const isEmpty = (value: ActiveStatusWithPermissions | string[]): boolean => {
@@ -43,10 +47,12 @@ const ActivateButton = ({
                             activeStatus,
                             currentStatus,
                             currentPermissions,
-                            activeStatusWithPermissions
+                            activeStatusWithPermissions,
+                            disabled,
+                            color
                         }: ActivateButtonProps) => {
-    const [disabled, setDisabled] = useState(true);
-    const ButtonDisabled = (ok: boolean) => setDisabled(!ok);
+    const [customDisabled, setCustomDisabled] = useState(disabled);
+    const ButtonDisabled = (ok: boolean) => setCustomDisabled(!ok);
 
     const verifyByType = (type: ButtonType): boolean => {
         switch (type) {
@@ -92,7 +98,12 @@ const ActivateButton = ({
     }, [type]);
 
     return (
-        <button type="button" style={style} onClick={onClick} disabled={disabled}>
+        <button
+            type="button"
+            className={customDisabled ? `btn btn-disabled ${color}` : `btn ${color}`}
+            style={style}
+            onClick={onClick}
+            aria-disabled={customDisabled}>
             {title}
         </button>
     );
