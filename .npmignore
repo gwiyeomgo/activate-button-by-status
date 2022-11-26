@@ -2,9 +2,10 @@
 node_modules/
 
 # dev
-src
+/src
 .gitignore
 tsconfig.json
+/demo
 
 # GIT
 .git

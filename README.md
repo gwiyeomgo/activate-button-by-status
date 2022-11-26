@@ -1,20 +1,26 @@
 ## activate-button-by-status install
 
 ### Installation
-
 `npm install @gwiyeomgo/activate-button-by-status@latest`
-
 `yarn add @gwiyeomgo/activate-button-by-status@latest`
 
 ### background
+If the button is disabled, a specific status value is required.
 
-There are times when a button needs to be enabled and disabled in a specific status.
-For example, a button should be disabled when it is in a non-cancelable status.
-I ended up using nested if statements while actually writing the code.
+For example,
+There is a button to modify the data.
+
+For example,
+There is a button to modify the data.
+This button should be disabled if the data is in the Cancel state.
+
+
+I actually ended up using nested if statements while writing the code.
 The length of the code became longer and the code became difficult to understand.
 To fix this, the repeated code was made into a component.
 
 ### version release
+### [Example Link](https://codesandbox.io/s/activatebutton-kr7yhh?file=/public/index.html:0-1544)
 
 * 0.0.0 (2022-8-15)
    - first upload npm module
@@ -23,8 +29,10 @@ To fix this, the repeated code was made into a component.
 * 0.1.0 (2022-08-22)
    - add activeStatusWithPermissions and currentPermissions 
 
-### [Example Link](https://github.com/gwiyeomgo/activate-button-by-status/tree/main/examples)
-
+* 0.2.0 (2022-11-26)
+   - add typescript
+   - refactoring
+    
 #### version 0.0.0
 * If not included in the activeStatus, the button is disabled.
 * If you want to use `activeStatus`, please specify the `currentStatus` value
