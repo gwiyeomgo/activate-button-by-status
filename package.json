@@ -1,6 +1,6 @@
 {
   "name": "@gwiyeomgo/activate-button-by-status",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "main" : "dist/ActivateButton.js",
   "description": "react button component that are enabled and disabled depending on their status",
   "keywords": [
