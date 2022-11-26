@@ -1,7 +1,7 @@
 {
   "name": "@gwiyeomgo/activate-button-by-status",
-  "version": "0.2.12",
-  "main" : "dist/ActivateButton.js",
+  "version": "0.2.21",
+  "main": "dist/ActivateButton.js",
   "description": "react button component that are enabled and disabled depending on their status",
   "keywords": [
     "react",
@@ -33,9 +33,10 @@
     "rimraf": "^3.0.2",
     "typescript": "^4.9.3"
   },
-  "scripts" : {
-    "build" : "npx rimraf dist && tsc",
-    "prepare" : "yarn build"
+  "scripts": {
+    "prepare": "yarn build",
+    "build": "npx rimraf dist && tsc && yarn copy-files",
+    "copy-files": "npx babel src/lib/styles.css --copy-files --out-dir dist "
   },
   "browserslist": {
     "production": [
@@ -51,5 +52,9 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2"
   }
 }

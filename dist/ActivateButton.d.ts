@@ -1,5 +1,7 @@
 import React from "react";
+import "./styles.css";
 type ButtonType = "status" | "statusWithPermission";
+type Color = "danger" | "primary" | "success";
 type ActiveStatusWithPermissions = {
     [key: string]: string[];
 };
@@ -12,6 +14,8 @@ type ActivateButtonProps = {
     currentStatus: string;
     currentPermissions?: string[];
     activeStatusWithPermissions?: ActiveStatusWithPermissions;
+    disabled?: boolean;
+    color?: Color;
 };
-declare const ActivateButton: ({ title, style, onClick, type, activeStatus, currentStatus, currentPermissions, activeStatusWithPermissions }: ActivateButtonProps) => JSX.Element;
+declare const ActivateButton: ({ title, style, onClick, type, activeStatus, currentStatus, currentPermissions, activeStatusWithPermissions, disabled, color }: ActivateButtonProps) => JSX.Element;
 export default ActivateButton;

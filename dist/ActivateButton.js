@@ -24,6 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
+require("./styles.css");
 var isEmpty = function (value) {
     if (Array.isArray(value)) {
         var arr = value;
@@ -37,9 +38,9 @@ var isContains = function (key, obj) {
     return obj.hasOwnProperty(key);
 };
 var ActivateButton = function (_a) {
-    var title = _a.title, style = _a.style, onClick = _a.onClick, type = _a.type, activeStatus = _a.activeStatus, currentStatus = _a.currentStatus, currentPermissions = _a.currentPermissions, activeStatusWithPermissions = _a.activeStatusWithPermissions;
-    var _b = (0, react_1.useState)(true), disabled = _b[0], setDisabled = _b[1];
-    var ButtonDisabled = function (ok) { return setDisabled(!ok); };
+    var title = _a.title, style = _a.style, onClick = _a.onClick, type = _a.type, activeStatus = _a.activeStatus, currentStatus = _a.currentStatus, currentPermissions = _a.currentPermissions, activeStatusWithPermissions = _a.activeStatusWithPermissions, disabled = _a.disabled, color = _a.color;
+    var _b = (0, react_1.useState)(disabled), customDisabled = _b[0], setCustomDisabled = _b[1];
+    var ButtonDisabled = function (ok) { return setCustomDisabled(!ok); };
     var verifyByType = function (type) {
         switch (type) {
             case "status":
@@ -77,7 +78,7 @@ var ActivateButton = function (_a) {
     (0, react_1.useEffect)(function () {
         ButtonDisabled(type && verifyByType(type));
     }, [type]);
-    return (react_1.default.createElement("button", { type: "button", style: style, onClick: onClick, disabled: disabled }, title));
+    return (react_1.default.createElement("button", { type: "button", className: customDisabled ? "btn btn-disabled ".concat(color) : "btn ".concat(color), style: style, onClick: onClick, "aria-disabled": customDisabled }, title));
 };
 exports.default = ActivateButton;
 //# sourceMappingURL=ActivateButton.js.map
