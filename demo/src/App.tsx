@@ -1,6 +1,5 @@
 import React from "react";
-import ActivateButtonByStatus from "@gwiyeomgo/activate-button-by-status";
-
+import ActivateButton from "@gwiyeomgo/activate-button-by-status";
 
 const STATUS = {
     Completed: "Completed",
@@ -12,25 +11,25 @@ const STATUS = {
 export default function App() {
     return (
         <div className="App">
-            {/* currentStatus is disabled because it is not included in activeStatus */ }
-            <ActivateButtonByStatus
+            {/* currentStatus is disabled because it is not included in activeStatus */}
+            <ActivateButton
                 title={"Cancelled Button(disabled)"}
                 type={"status"}
                 onClick={() => {
                     alert("You can implement the situation by clicking the button");
                 }}
-                style={{backgroundColor: "pink"}}
-                currentStatus={STATUS.Completed}
+                style={{ backgroundColor: "pink" }}
+                currentStatus={STATUS.Registered}
                 activeStatus={["Registered", "Accepted"]}
             />
             {/*Users with manager Permission can cancel in the Completed status.*/}
-            <ActivateButtonByStatus
+            <ActivateButton
                 title={"Cancelled Button"}
-                type={"statusWithPermission"}
                 onClick={() => {
                     alert("You can implement the situation by clicking the button");
                 }}
-                style={{backgroundColor: "white"}}
+                type={"statusWithPermission"}
+                style={{ backgroundColor: "white" }}
                 currentStatus={STATUS.Completed}
                 currentPermissions={["Manager"]}
                 activeStatusWithPermissions={{
@@ -43,3 +42,5 @@ export default function App() {
         </div>
     );
 }
+
+
