@@ -22,7 +22,7 @@ const isEmpty = (value: ActiveStatusWithPermissions | string[]): boolean => {
 //array 도 object 다..
     if (Array.isArray(value)) {
         //value 는 never type으로 기존 배열을 타입이 지정된 배열에 합해준다
-        // const arr :string[] = []ㅁ
+        // const arr :string[] = []
         //arr.concat(value)
         const arr: string[] = value;
         return arr.length > 0;
