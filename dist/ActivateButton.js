@@ -40,7 +40,7 @@ var isContains = function (key, obj) {
 var ActivateButton = function (_a) {
     var title = _a.title, style = _a.style, onClick = _a.onClick, type = _a.type, activeStatus = _a.activeStatus, currentStatus = _a.currentStatus, currentPermissions = _a.currentPermissions, activeStatusWithPermissions = _a.activeStatusWithPermissions, disabled = _a.disabled, color = _a.color;
     var _b = (0, react_1.useState)(disabled), customDisabled = _b[0], setCustomDisabled = _b[1];
-    var ButtonDisabled = function (ok) { return setCustomDisabled(!ok); };
+    var ButtonActive = function (ok) { return setCustomDisabled(!ok); };
     var verifyByType = function (type) {
         switch (type) {
             case "status":
@@ -48,7 +48,7 @@ var ActivateButton = function (_a) {
                     return activeStatus.includes(currentStatus);
                 }
                 else {
-                    throw new Error("No");
+                    throw new Error("activeStatus not exsist");
                 }
             case "statusWithPermission":
                 if (currentPermissions && isEmpty(currentPermissions)) {
@@ -71,12 +71,17 @@ var ActivateButton = function (_a) {
                     }
                 }
                 else {
-                    throw new Error("No");
+                    throw new Error("currentPermissions not exsist");
                 }
         }
     };
     (0, react_1.useEffect)(function () {
-        ButtonDisabled(type && verifyByType(type));
+        if (disabled) {
+            ButtonActive(false);
+        }
+        else {
+            ButtonActive(type && verifyByType(type));
+        }
     }, [type]);
     return (react_1.default.createElement("button", { type: "button", className: customDisabled ? "btn btn-disabled ".concat(color) : "btn ".concat(color), style: style, onClick: onClick, "aria-disabled": customDisabled }, title));
 };
