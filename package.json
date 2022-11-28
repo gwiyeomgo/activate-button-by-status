@@ -1,6 +1,6 @@
 {
   "name": "@gwiyeomgo/activate-button-by-status",
-  "version": "0.2.21",
+  "version": "0.2.22",
   "main": "dist/ActivateButton.js",
   "description": "react button component that are enabled and disabled depending on their status",
   "keywords": [
@@ -12,9 +12,9 @@
     "active",
     "disabled"
   ],
-  "homepage": "https://github.com/gwiyeomgo",
+  "homepage": "https://github.com/gwiyeomgo/activate-button-by-status",
   "bugs": {
-    "url": "https://github.com/gwiyeomgo",
+    "url": "https://github.com/gwiyeomgo/activate-button-by-status",
     "email": "gwiyeomgo@gmail.com"
   },
   "author": {
