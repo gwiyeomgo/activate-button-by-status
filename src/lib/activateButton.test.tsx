@@ -2,7 +2,8 @@ import React from "react";
 import {fireEvent,screen, render} from '@testing-library/react';
 import ActivateButton from "./activateButton";
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom/extend-expect';
+//import '@testing-library/jest-dom/extend-expect';
+
 
 // describe : test 그룹화
 describe('button click test',  () => {
@@ -13,6 +14,7 @@ describe('button click test',  () => {
             title={'Click'}
             type={"status"}
             onClick={() => {}}
+            disabled={false}
             currentStatus={"Registered"}
             activeStatus={["Registered"]}
         />);
@@ -25,6 +27,7 @@ describe('button click test',  () => {
             title={'Click'}
             type={"status"}
             onClick={() => {}}
+            disabled={false}
             currentStatus={"Registered"}
             activeStatus={["Registered"]}
         />);
